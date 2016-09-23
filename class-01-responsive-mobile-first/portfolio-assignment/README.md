@@ -41,3 +41,6 @@ Let these user stories guide your development:
 - Use mobile-first design principles when adding CSS.
 - Add new styles in any media queries as needed to make the page look good on desktop screens.
 - For bonus points, include styles for tablet displays, as well as desktop and mobile.
+
+## Submitting your working
+- When you've completed the work for this assignment, merge your work to the master branch using a Pull Request on GitHub, and submit the link to your PR in canvas.

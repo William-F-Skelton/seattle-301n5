@@ -12,8 +12,12 @@
   5. Logical operators to facilitate @media queries.
   6. Building from mobile first to control scaling.
   7. Understanding how to use viewport meta tags.
-    - Demo: Live-server: 172.16.9.139:8080  
+    - Demo: Live-server: 172.16.0.24:8080  
   8. What are some of the challenges of incorporating embedded media in RWD?
+
+  8. Housekeeping items
+  8. .eslintrc file / 'use strict' mode
+  8. Review day01 material - RWD
   9. Understanding how using SMACSS can benefit project development.
   10. Familiarity with using resets as base stylesheets.
   11. Understanding how SMACSS breaks down a site’s CSS into categories.
