@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
   <title>Handlebars Template</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" charset="utf-8"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
-  <script id="hello" type="text/x-handlebars-template">
-    Hello {{who}}, my name is {{name}}, and I like {{what}}
+  <script id="template" type="text/x-handlebars-template">
+    <section>
+      <p>{{ title }}</p>
+      <ul>
+        <li>{{ name }}</li>
+        <li>{{ age }}</li>
+        <li>{{ favorite }}</li>
+      </ul>
+    </section>
   </script>
+
 </head>
 <body>
-  <div id="app"></div>
-  <script>
+  <div id="results"></div>
+  <script type="text/javascript">
     var data = {
-      who: "Students",
-      name: "Ivan",
-      what: "Apples"
+      title: "301 Rocks",
+      name: "Yamile",
+      age: "99",
+      favorite: "Apple iPhone"
     };
-    var appTemplate = $('#hello').html()
-    var compiledTemplate = Handlebars.compile(appTemplate);
-    var html = compiledTemplate(data);
-    $('#app').append(html);
-  </script>
 
+    // var htmlTemp = $('#template');
+    var template = Handlebars.compile($('#template').html());
+    $('#results').append(template(data));
+
+  </script>
 </body>
 </html>

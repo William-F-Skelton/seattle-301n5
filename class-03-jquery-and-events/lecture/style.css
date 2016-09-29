@@ -33,7 +33,3 @@ img {
 .menu-item {
   background-color: #ddd;
 }
-
-#menu1 li::After {
-  content: '-Hello world';
-}
