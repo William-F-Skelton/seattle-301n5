@@ -65,29 +65,42 @@
   // TODID: Chain together a `map` and a `reduce` call to get a rough count of all words in all articles.
   Article.numWordsAll = function() {
     return Article.all.map(function(article) {
-      return article.split(' '); // Get the total number of words in this article
-
+      return article.body.split(' ').length;
     })
-    .reduce(function(a, b) {
-      return return a + b; // Sum up all the values in the collection
-    })
+    .reduce(function(a, b){
+        return a + b;
+      })
   };
 
-  // TODO: Chain together a `map` and a `reduce` call to produce an array of unique author names.
+  // TODID: Chain together a `map` and a `reduce` call to produce an array of unique author names.
   Article.allAuthors = function() {
-    return // Don't forget to read the docs on map and reduce!
+    return Article.all.map(function(article){
+      return article.author;
+    })
+    .filter(function(ele, ind, arr){
+      return arr.indexOf(ele) === ind;
+    });// Don't forget to read the docs on map and reduce!
   };
 
   Article.numWordsByAuthor = function() {
     // TODO: Transform each author string into an object with 2 properties: One for
     // the author's name, and one for the total number of words across all articles written by the specified author.
     return Article.allAuthors().map(function(author) {
+      console.log(author);
       return {
         // someKey: someValOrFunctionCall().map(...).reduce(...), ...
+        name: author,
+        numWords: Article.all.filter(function(article){
+          return article.author === author;
+        })
+        .reduce(function(a, b){
+          return a.body.split(' ').length + b.body.split(' ').length;
+        })
+
       }
     })
   };
-
+  ctx.Article = Article;
 })(window)
 
 
