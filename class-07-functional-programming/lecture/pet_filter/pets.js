@@ -1,5 +1,21 @@
 var pets = {};
 
+pets.getMatchingPets = function() {
+  return pets.all
+    .filter(function(pet) {
+      return pets.isSenior(pet);
+    })
+    .filter(function(pet) {
+      return pets.isSpecialNeeds(pet);
+    })
+    .filter(function(pet) {
+      return pets.isSizePet(pet);
+    })
+    .filter(function(pet) {
+      return pets.isSexPet(pet);
+    });
+};
+
 pets.isSpecialNeeds = function(pet) {
   if (pet.options.option) {
     var snOptsArray = pets.getSpecialNeedsOptions(pet.options.option);
@@ -40,28 +56,4 @@ pets.isSexPet = function(pet) {
   } else {
     return pet.sex.$t;
   }
-};
-
-
-
-
-
-
-
-
-
-pets.getMatchingPets = function() {
-  return pets.all
-    .filter(function(pet) {
-      return pets.isSenior(pet);
-    })
-    .filter(function(pet) {
-      return pets.isSpecialNeeds(pet);
-    })
-    .filter(function(pet) {
-      return pets.isSizePet(pet);
-    })
-    .filter(function(pet) {
-      return pets.isSexPet(pet);
-    });
 };
