@@ -68,8 +68,8 @@
       return article.body.split(' ').length;
     })
     .reduce(function(a, b){
-        return a + b;
-      })
+      return a + b;
+    })
   };
 
   // TODID: Chain together a `map` and a `reduce` call to produce an array of unique author names.
@@ -94,9 +94,8 @@
           return article.author === author;
         })
         .reduce(function(a, b){
-          return a.body.split(' ').length + b.body.split(' ').length;
-        })
-
+          return a + b.body.split(' ').length;
+        }, 0)
       }
     })
   };
