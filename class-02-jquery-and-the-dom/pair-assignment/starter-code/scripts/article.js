@@ -25,14 +25,14 @@ Article.prototype.toHtml = function() {
     3. article title,
     4. article body, and
     5. publication date. */
-	var $newTitle = $('h1').html();
+	var $newTitle = $('#articles').find('h1').html();
 	$newTitle.text(this.title);
 
-	var $newAuthor = $('a').html();
+	var $newAuthor = $('#articles').find('a').html();
 	$newAuthor.text(this.author);
 	$newAuthor.attr('href', this.authorUrl);
 
-	var $newPubDate = $('time').html();
+	var $newPubDate = $('#articles').find('time').html();
 	$newPubDate.text(this.publishedOn);
 	$newPubDate.attr('pubdate datetime', this.publishedOn);
 

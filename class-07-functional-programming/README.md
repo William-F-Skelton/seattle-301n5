@@ -28,9 +28,24 @@ Pair up to work on the MVC blog, then take what you learn to your portfolio site
   - a function that doesn't cause ANY side effects
   - given the same input, will ALWAYS return the same result
 - immutability
+  - values cannot be changed once they are created
+  - create new values by transforming an existing value and saving the result
+
+  ```javascript
+  // mutation
+  var a = 1
+  a += 1   // a === 2
+
+  // immutability
+  let z = 1
+  const a = 1
+  a += 1          //ERROR!
+
+  const b = a + 1 // b === 2, a === 1
+  ```
 - idempotence
   - an operation that gives the same output no matter how many times you do it
-  - examples: crosswalk button, read a file, get an object property, HTTP GET, scott's laundry
+  - examples: crosswalk button, read a file, get an object property, HTTP GET, toUpperCase(), parseFloat()
 
 ## functional array methods
 - map
