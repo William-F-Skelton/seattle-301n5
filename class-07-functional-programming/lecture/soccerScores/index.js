@@ -13,20 +13,13 @@ const inputString = `Lions 3, Snakes 3\nTarantulas 1, Aardvarks 0\nLions 1, Aard
 
 const parseGames = function(input) {
   return input
-    //split on \n  <- game strings like 'Lions 3, Snakes 3'
     .split('\n')
-    //split on ,
     .map(function(game) {
-      return game.split(', ')
+      const teams = game.split(', ')
+      const t1 = teams[0].split(' ')
+      const t2 = teams[1].split(' ')
+      return gameObj(t1[0], parseInt(t1[1]), t2[0], parseInt(t2[1]))
     })
-    .map(function(teamArr) {
-      const teamA = teamArr[0].split(' ')
-      const teamB = teamArr[1].split(' ')
-      return gameObj(teamA[0], teamA[1], teamB[0], teamB[1])
-    })
-
-    //split on space
-    //make object
 }
 
 
