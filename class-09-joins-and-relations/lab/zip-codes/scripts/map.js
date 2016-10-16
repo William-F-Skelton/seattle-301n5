@@ -7,4 +7,9 @@ function initMap() {
   });
 
   // TODO: Follow the Google Maps API docs to create markers on the map based on the search options on the home page.
+  // var marker = new google.maps.Marker({
+  //   position: {lat: 47.611435, lng: -122.330456},
+  //   map: map,
+  //   title: 'Hello World!'
+  // });
 }
