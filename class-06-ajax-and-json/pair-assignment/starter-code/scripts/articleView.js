@@ -1,10 +1,25 @@
+<<<<<<< HEAD
+=======
 'use strict';
 
+>>>>>>> f5376425225ae90d8cdf4e069c2b89e9d06cd597
 // Configure a view object, to hold all our functions for dynamic updates and article-related event handlers.
 var articleView = {};
 
 articleView.populateFilters = function() {
   $('article').each(function() {
+<<<<<<< HEAD
+    if (!$(this).hasClass('template')) {
+      var val = $(this).find('address a').text();
+      var optionTag = '<option value="' + val + '">' + val + '</option>';
+      $('#author-filter').append(optionTag);
+
+      val = $(this).attr('data-category');
+      optionTag = '<option value="' + val + '">' + val + '</option>';
+      if ($('#category-filter option[value="' + val + '"]').length === 0) {
+        $('#category-filter').append(optionTag);
+      }
+=======
     var val = $(this).find('address a').text();
     var optionTag = '<option value="' + val + '">' + val + '</option>';
     $('#author-filter').append(optionTag);
@@ -13,6 +28,7 @@ articleView.populateFilters = function() {
     optionTag = '<option value="' + val + '">' + val + '</option>';
     if ($('#category-filter option[value="' + val + '"]').length === 0) {
       $('#category-filter').append(optionTag);
+>>>>>>> f5376425225ae90d8cdf4e069c2b89e9d06cd597
     }
   });
 };
@@ -44,7 +60,11 @@ articleView.handleCategoryFilter = function() {
 };
 
 articleView.handleMainNav = function() {
+<<<<<<< HEAD
+  $('.main-nav').on('click', '.tab', function(e) {
+=======
   $('.main-nav').on('click', '.tab', function() {
+>>>>>>> f5376425225ae90d8cdf4e069c2b89e9d06cd597
     $('.tab-content').hide();
     $('#' + $(this).data('content')).fadeIn();
   });
@@ -53,7 +73,11 @@ articleView.handleMainNav = function() {
 };
 
 articleView.toggleNavDisplay = function() {
+<<<<<<< HEAD
+  $('.icon-menu').on('click', function(e) {
+=======
   $('.icon-menu').on('click', function() {
+>>>>>>> f5376425225ae90d8cdf4e069c2b89e9d06cd597
     $('.main-nav ul').toggle();
   });
 };
@@ -108,7 +132,11 @@ articleView.create = function() {
 
 articleView.initIndexPage = function() {
   Article.all.forEach(function(a){
+<<<<<<< HEAD
+    $('#articles').append(a.toHtml())
+=======
     $('#articles').append(a.toHtml());
+>>>>>>> f5376425225ae90d8cdf4e069c2b89e9d06cd597
   });
 
   articleView.populateFilters();

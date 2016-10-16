@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DBs &amp; Maps</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="vendor/styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <script type="text/javascript" src='vendor/scripts/jquery-2.1.4.js'></script>
+    <script type="text/javascript" src='vendor/scripts/html5sql.js'></script>
+  </head>
+  <body>
+    <header>
+      <section>
+        <form>
+          <label for="zip">Select a Zip</label>
+          <input type="text" name="zip">
+          <input type="submit" value="Search">
+        </form>
+      </section>
+      <section><p>OR</p></section>
+      <section>
+        <select id="state-select">
+          <option value="state">Select a State</option>
+        </select>
+        <select id="city-select">
+          <option value="city">Select a City</option>
+        </select>
+      </section>
+    </header>
+
+    <main>
+      <div id='map'></div>
+    </main>
+
+    <script type="text/javascript" src='scripts/webdb.js'></script>
+    <script type="text/javascript" src='scripts/search.js'></script>
+    <script type="text/javascript" src='scripts/loadDB.js'></script>
+    <script type="text/javascript" src='scripts/map.js'></script>
+    <!-- TODO: Create an API Key (linked in the README) and populate the script below where it says 'API_KEY_HERE'-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY_HERE&callback=initMap" async defer></script>
+    <script type="text/javascript">
+      zips.loadDB();
+    </script>
+  </body>
+</html>
