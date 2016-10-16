@@ -64,11 +64,7 @@
           Welcome to my Blog
         </header>
         <section>
-<<<<<<< HEAD
-          <h1>Some of my intrests:</h1>
-=======
           <h1>Some of my interests:</h1>
->>>>>>> f5376425225ae90d8cdf4e069c2b89e9d06cd597
           <ul>
             <li>Coding</li>
             <li>Sharing what I've learned</li>
@@ -78,16 +74,20 @@
       </section>
     </main>
     <footer>
-      &copy; 2016 Code Fellows | Static Blog | Happy Ipsum!
+      &copy; 2015 Code Fellows | Static Blog | Happy Ipsum!
     </footer>
 
     <script src="/vendor/scripts/jquery-2.1.4.js"></script>
     <script src="/vendor/scripts/handlebars.js"></script>
     <script src="/vendor/scripts/marked.js"></script>
+    <!-- TODO: Include the script files we need, that give us an API to the WebSQL feature of Chrome: -->
+
     <script src="/scripts/article.js"></script>
     <script src="/scripts/articleView.js"></script>
     <script>
-      // TODO: What model 'Article' function do we need to call, to initiate the retrieval of data?
+      // DONE: Ensure that a database table for articles exists, every time we load the page.
+      Article.createTable();
+      Article.fetchAll(articleView.initIndexPage);
     </script>
   </body>
 </html>

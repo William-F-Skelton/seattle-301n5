@@ -19,7 +19,7 @@ function fizzbuzz(n) {
   // do the code
 }
 
-// n = 100 => 1, 2, FIZZ, 3, 4, BUZZ, .... 14, FIZZBUZZ, 16, ... 100
+// n = 100 => 1, 2, FIZZ, 4, BUZZ, .... 14, FIZZBUZZ, 16, ... 100
 ```
 
 
@@ -33,7 +33,6 @@ function reverseStr(str) {
 
 // str = 'buckets of jello' => 'ollej fo stekcub'
 ```
-
 
 Challenge # 3:
 Bracket Validator
