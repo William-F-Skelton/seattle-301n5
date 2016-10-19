@@ -31,12 +31,10 @@
     )
     citySelector.on('change', function(){
       var selectedCity = this.value;
-      // console.log('1: ' + this.value);
       webDB.execute('SELECT DISTINCT latitude, longitude, city FROM zips WHERE city="' + selectedCity + '" AND state="' + selectedState + '"',
         function(result) {
           args = result;
-          // console.log('args:');
-          // console.log(args);
+
           plotMarkers(args);
         }
       )
