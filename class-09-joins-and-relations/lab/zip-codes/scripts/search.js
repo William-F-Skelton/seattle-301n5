@@ -15,16 +15,11 @@
   function populateCityFilter() {
     var selectedState = this.value;
     var args = [];
-    console.log("=========================");
-    console.log('selectedState: ' + selectedState);
-    console.log("=========================");
+
     webDB.execute([{
       'sql': 'SELECT DISTINCT city FROM zips  WHERE state=? ORDER BY city',
       'data': [selectedState]}], function(result) {
-        console.log("=========================");
-        console.log('First Result: ');
-        console.log(result[0]);
-        console.log("=========================");
+
         citySelector.empty();
         citySelector.append('<option value="city">Select a City</option>')
         result.forEach(function(currentValue){
@@ -37,17 +32,11 @@
     citySelector.on('change', function(){
       var selectedCity = this.value;
       // console.log('1: ' + this.value);
-      webDB.execute([{
-        'sql': 'SELECT DISTINCT latitude, longitude, city FROM zips WHERE city=?',
-        'data': [selectedCity]}], function(result) {
-          console.log(result);
-          // console.log('args:');
-          // console.log(result);
+      webDB.execute('SELECT DISTINCT latitude, longitude, city FROM zips WHERE city="' + selectedCity + '" AND state="' + selectedState + '"',
+        function(result) {
           args = result;
+          // console.log('args:');
           // console.log(args);
-          // console.log(args[0].latitude);
-          // console.log(args[0].longitude);
-          // console.log(args[0].city);
           plotMarkers(args);
         }
       )
@@ -58,12 +47,20 @@
   function zipSearch(event){
     event.preventDefault();
     var zipCode = $('#input').val();
-    webDB.execute('SELECT * FROM zips WHERE zip=' + zipCode, function(result) {
-      var lat = result.latitude;
-      var long = result.longitude;
-      var name = result.city;
-      plotMarkers([lat, long, name]);
-      console.log(result);
+    console.log('zip code');
+    console.log(zipCode);
+    webDB.execute('SELECT latitude, longitude, city FROM zips WHERE zip="' + zipCode + '"', function(result) {
+      console.log('result:');
+      console.log(result[0]);
+
+      var zip = {};
+      zip.latitude = result[0].latitude;
+      zip.longitude = result[0].longitude;
+      zip.city = result[0].city;
+
+      var args = [zip];
+      console.log(zip);
+      plotMarkers(args);
     })
   }
 
