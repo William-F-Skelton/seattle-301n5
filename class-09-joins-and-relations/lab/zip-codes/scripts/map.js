@@ -22,11 +22,8 @@ function plotMarkers(args) {
     scrollwheel: true,
     zoom: 8
   });
-  // TODO: Follow the Google Maps API docs to create markers on the map based on the search options on the home page.
+  // TODID: Follow the Google Maps API docs to create markers on the map based on the search options on the home page.
   args.forEach(function(currentValue, index) {
-    // console.log(args[index].latitude);
-    // console.log(args[index].longitude);
-    // console.log(args[index].city);
     var marker = new google.maps.Marker({
       position: {lat: args[index].latitude, lng: args[index].longitude},
       map: map,
