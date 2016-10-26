@@ -55,7 +55,7 @@ DELETE FROM users WHERE name = 'Scott';
 
 ```sql
 CREATE TABLE people(
-  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  id INTEGER PRIMARY KEY,
   firstName VARCHAR(100) NOT NULL,
   lastName VARCHAR(100) NOT NULL,
   age INTEGER,
@@ -63,6 +63,7 @@ CREATE TABLE people(
   birthdate DATE
 );
 ```
+**note: webSQL will automatically increment the primary key**
 
 [data types](http://www.w3schools.com/sql/sql_datatypes_general.asp)
 

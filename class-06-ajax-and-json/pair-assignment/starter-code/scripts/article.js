@@ -1,5 +1,8 @@
+<<<<<<< HEAD
+=======
 'use strict';
 
+>>>>>>> f5376425225ae90d8cdf4e069c2b89e9d06cd597
 function Article (opts) {
   this.author = opts.author;
   this.authorUrl = opts.authorUrl;
@@ -19,7 +22,11 @@ Article.all = [];
 Article.prototype.toHtml = function() {
   var template = Handlebars.compile($('#article-template').text());
 
+<<<<<<< HEAD
+  this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
+=======
   this.daysAgo = parseInt((new Date() - new Date(this.publishedOn)) / 60 / 60 / 24 / 1000);
+>>>>>>> f5376425225ae90d8cdf4e069c2b89e9d06cd597
   this.publishStatus = this.publishedOn ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
   this.body = marked(this.body);
 
@@ -40,8 +47,13 @@ Article.loadAll = function(rawData) {
 
   rawData.forEach(function(ele) {
     Article.all.push(new Article(ele));
+<<<<<<< HEAD
+  })
+}
+=======
   });
 };
+>>>>>>> f5376425225ae90d8cdf4e069c2b89e9d06cd597
 
 // This function will retrieve the data from either a local or remote source,
 // and process it, then hand off control to the View.
@@ -64,4 +76,8 @@ Article.fetchAll = function() {
     // 4. And then render the index page (perhaps with an articleView method?).
 
   }
+<<<<<<< HEAD
+}
+=======
 };
+>>>>>>> f5376425225ae90d8cdf4e069c2b89e9d06cd597

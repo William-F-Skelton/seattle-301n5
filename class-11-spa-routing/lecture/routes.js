@@ -1,8 +1,7 @@
-page('/', index)
-page('/about', about)
-page('/contact', contactController.showAll)
-page('/contact/:name', contactController.getInfo)
+'use strict';
 
-page('*', epicfail)
-
-page()
+page('/', homeController.init);
+page('/contact', contactController.init);
+page('/contact/:banana', contactController.init);
+page('*', homeController.error);
+page();

@@ -7,7 +7,6 @@ At the heart of every web app is the Web Request-Response Cycle. Pay close atten
 2. Controller
 3. Routing & SPA
 4. Page.js
-5. Final Projects Intro
 
 ## Controller
 
@@ -23,9 +22,8 @@ At the heart of every web app is the Web Request-Response Cycle. Pay close atten
 ```
 GET: /
 GET: /about
-GET: /articles/42
-GET: /articles/42/edit
-PUT: /articles/42
+GET: /articles
+GET: /articles/:id
 ```
 
 - use the URL to to derive app state & define requests
@@ -77,6 +75,7 @@ page()
 examples:
 [You Are Hungry](https://youarehungry.herokuapp.com/)
 [My Funny Friend and Me](https://myfunnyfriendandme.herokuapp.com/)
+[SpotaVinyl](https://spotavinyl.herokuapp.com)
 
 ## Helpful Resources
 - What is a Single-Page Application (SPA), with live demo: http://www.johnpapa.net/pageinspa/
