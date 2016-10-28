@@ -13,20 +13,10 @@
       headers: {
         Authorization: `token ${githubToken}`
       }
-    }).done(function(data) {
-      console.log(data);
-      data.filter(function(ele) {
-        console.log(ele.owner.login === 'william-f-skelton');
-        return ele.owner.login === 'william-f-skelton';
-      }).forEach(function(repo) {
-        console.log(output);
-        var output = '<h2>' + repo.name + '</h2>' +
-        '<p>' + repo.description + '</p>';
-        $('#repos').append(output);
-        console.log(`===============`);
-      })
+    }).done(data => {
+      repos.all = data;
+      callback();
     });
-
   };
   // DONE: Model method that filters the full collection for repos with a particular attribute.
   // You could use this to filter all repos that have a non-zero `forks_count`, `stargazers_count`, or `watchers_count`.
